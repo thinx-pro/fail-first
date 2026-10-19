@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>fail-first demo</title>
+<style>
+  body { margin: 0; background: #0d1117; font: 15px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; color: #c9d1d9; }
+  .win { margin: 24px; border-radius: 10px; background: #161b22; box-shadow: 0 8px 30px rgba(0,0,0,.5); overflow: hidden; }
+  .bar { height: 30px; background: #21262d; display: flex; align-items: center; padding-left: 12px; gap: 8px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  pre { margin: 0; padding: 18px 22px; white-space: pre; }
+  .p { color: #8b949e; } .b { font-weight: 700; color: #f0f6fc; } .d { color: #8b949e; }
+  .g { color: #3fb950; } .r { color: #f85149; } .y { color: #d29922; } .c { color: #58a6ff; }
+</style></head>
+<body><div class="win"><div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span></div>
+<pre><span class="p">~/src/ufo $</span> npx github:thinx-pro/fail-first --head 5cd9e67
+<span class="b">fail-first</span> <span class="d">a7b94e69 → 5cd9e676</span>
+<span class="d">runner: vitest  ·  npx --no-install vitest run {file}</span>
+<span class="d">source files changed: 1</span>
+
+<span class="d">test file          before  after  verdict</span>
+test/base.test.ts  <span class="r">fail</span>    <span class="g">pass</span>   <span class="g">✔ PROVES</span>
+                   <span class="d">└ before: AssertionError: expected '//evil.com' to be '/evil.com'</span>
+
+<span class="g b">OK</span>  1 PROVES
+
+<span class="p">~/src/more-itertools $</span> npx github:thinx-pro/fail-first --head d71c4ad
+<span class="b">fail-first</span> <span class="d">c0ed9d18 → d71c4ad9</span>
+<span class="d">runner: unittest  ·  python3 -m unittest {file}</span>
+<span class="d">source files changed: 1</span>
+
+<span class="d">test file           before  after  verdict</span>
+tests/test_more.py  <span class="g">pass</span>    <span class="g">pass</span>   <span class="y">⚠ VACUOUS</span>
+
+<span class="r b">NOT PROVEN</span>  1 VACUOUS
+<span class="y">  VACUOUS tests pass on the old code too: they would not catch this bug coming back.</span></pre>
+</div></body></html>

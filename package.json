@@ -1,0 +1,38 @@
+{
+  "name": "fail-first",
+  "version": "0.1.0",
+  "description": "Prove your new tests fail without your change. Runs changed tests against the code before and after; flags tests that pass either way.",
+  "type": "module",
+  "bin": {
+    "fail-first": "bin/fail-first.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "skill",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "testing",
+    "fail-to-pass",
+    "regression-test",
+    "code-review",
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "git",
+    "tdd"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinx-pro/fail-first.git"
+  }
+}
