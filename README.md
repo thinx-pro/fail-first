@@ -100,19 +100,3 @@ Copy [`skill/fail-first/SKILL.md`](skill/fail-first/SKILL.md) to `~/.claude/skil
 ## License
 
 MIT
-
----
-
-## 中文说明
-
-**fail-first：证明你新加的测试在改动之前是失败的。**
-
-修 bug 时常说「已修复，并加了回归测试」，但很少有人去验证这个测试在修复之前会不会失败。如果改动之前它也能通过，它就测不到这个 bug，以后 bug 回来也不会被发现。fail-first 把你新增或修改的测试分别放在改动前和改动后的代码上各跑一次：改动前失败、改动后通过才算 `PROVES`；两次都通过就是 `VACUOUS`（测试是空的）。它支持 pytest、unittest、vitest、jest、`node --test`、go、cargo 等，也可以用 `--cmd` 自定义命令。整个过程在临时 git worktree 里进行，不会改动你的工作区。
-
-在 more-itertools 和 unjs/ufo 的 23 个真实修复提交上实测：20 个测试文件为 `PROVES`，6 个为 `VACUOUS`（来自 4 个提交）。逐个人工核对后，其中 2 个提交属于预期内（重构、整理测试），另外 2 个提交的新测试在修复前就已经能通过。
-
-```bash
-npx -y github:thinx-pro/fail-first
-```
-
-`skill/fail-first/SKILL.md` 可以直接放进 Claude Code 的 skills 目录，让 Agent 在宣布「修好了」之前先跑一遍。
