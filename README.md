@@ -2,6 +2,9 @@
 
 **Prove your new tests fail without your change.**
 
+<!-- agent-preflight -->
+> **Also a Claude Code skill.** `fail-first` is part of [agent-preflight](https://github.com/thinx-pro/agent-preflight), 16 offline checks for coding agents: `/plugin marketplace add thinx-pro/agent-preflight` then `/plugin install fail-first@agent-preflight`, and ask Claude in plain words.
+
 ![version](https://img.shields.io/badge/version-0.1.0-blue) ![node](https://img.shields.io/badge/node-%3E%3D18-green) ![deps](https://img.shields.io/badge/dependencies-0-brightgreen) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
 
 fail-first runs the tests you added or changed twice: against the code **before** your change (they should fail) and **after** it (they should pass). A test that passes both times does not test your fix. It works with pytest, unittest, vitest, jest, mocha, ava, `node --test`, `go test`, cargo, rspec and minitest, or any command you give it.
